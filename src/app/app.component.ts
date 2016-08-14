@@ -8,9 +8,12 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
+  title: string;
+
   constructor(public af: AngularFire) {
     this.af.auth.subscribe(auth => console.log(auth));
   }
+
   login() {
     this.af.auth.login({
       provider: AuthProviders.Google,
